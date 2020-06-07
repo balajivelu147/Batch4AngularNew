@@ -1,0 +1,46 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div formGroupName="loginType">
+
+        <label>user Type</label> 
+        <input type="text" formControlName="userType">
+        <br/>
+        <label>authority</label> 
+        <!-- <input type="text" formControlName="authority"> -->
+        <select  formControlName="authority" style="    width: 310px;">
+            <option>Admin</option>
+            <option>Basic User</option>
+
+        </select>
+        <br/>
+
+    </div> 
+    <label>user name</label> 
+    <input type="text" formControlName="userName">
+    <div *ngIf="f.userName.errors?.required" style="color:red">user name is required</div>    
+    <div *ngIf="f.userName.errors?.minlength" style="color:red">min lenght 5</div>
+
+    <!-- <span>{{f.userName?.status | async}}</span> -->
+<br/>
+    <label>passowrd</label> 
+    <input type="password" formControlName="password">
+
+    <label>confirm passowrd</label> 
+    <input type="password" formControlName="confirmPassword">
+<div *ngIf="loginForm.submitted">
+    <div *ngIf="f.confirmPassword.errors?.isPasswordNotMatching" style="color:red">confirm password not matching</div>
+</div>
+    <br/>
+
+    <div formArrayName = "userList" *ngFor="let item of loginForm.get('userList')['controls'];
+     let i =index;">
+        <div fromGroupName = "i">
+        <label>dynamicallyCreatedParam</label> 
+        <input type="text" formControlName="dynamicallyCreatedParam" [value]="">
+    </div>
+    </div>
+<button type="submit">login</button>
+
+</form>
+
+<button type="submit" (click)="createNewUserList('')">dynamic field</button>
+<button type="submit" (click)="removeUserList()">remove field</button>
