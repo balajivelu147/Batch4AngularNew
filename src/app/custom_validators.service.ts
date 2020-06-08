@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class CustomValidators {
+
    comparePassword(control: AbstractControl): ValidationErrors {
         if (control.parent != undefined) {
           let pwd = control.parent.get('password').value;
