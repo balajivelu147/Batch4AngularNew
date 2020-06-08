@@ -8,8 +8,13 @@ AbstractControl
 validations 
 validation rejex ---> 
 events --> statechanges, valuechanges
-setValue, PatchValue
+setValue,
+ PatchValue -
 validation through function
 
+
+
+patchValue 
+rejex validation
 
 https://stackblitz.com/edit/angular-reactive-forms-async-validator?file=src%2Fapp%2Fvalidators%2Fuser.validator.ts

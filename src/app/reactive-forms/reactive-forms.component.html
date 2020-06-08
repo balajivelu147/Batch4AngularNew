@@ -26,7 +26,7 @@
 
     <label>confirm passowrd</label> 
     <input type="password" formControlName="confirmPassword">
-<div *ngIf="loginForm.submitted">
+<div >
     <div *ngIf="f.confirmPassword.errors?.isPasswordNotMatching" style="color:red">confirm password not matching</div>
 </div>
     <br/>

@@ -11,13 +11,15 @@ import { MatSelectModule } from '@angular/material/select'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { firstLetterPipe } from './pipes/firstletter.components';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { MatSidenavModule } from '@angular/material/sidenav'
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     firstLetterPipe,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     MatSelectModule,
     FormsModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,    
+    MatSidenavModule,
   ],
   exports: [
     ReactiveFormsModule

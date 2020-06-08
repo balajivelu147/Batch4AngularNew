@@ -24,6 +24,8 @@ export class ReactiveFormsComponent implements OnInit {
         userType: new FormControl('', [
           Validators.required,
           Validators.minLength(5)
+          // ,
+          // Validators.pattern('^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$')
         ]),
         authority: new FormControl(''),
       }),
